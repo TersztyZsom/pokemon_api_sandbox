@@ -71,8 +71,10 @@ There are no major configurations needed for this script. If needed, you can mod
 3. Commit your changes (`git commit -m 'Add some feature'`).
 4. Push to the branch (`git push origin feature/your-feature`).
 5. Open a pull request.
-
 Here is a picture when you ran the program:
+
+
+
 ![image](https://github.com/user-attachments/assets/f0f99e75-ec1b-4aec-901c-1f5be0fb6018)
 
 
