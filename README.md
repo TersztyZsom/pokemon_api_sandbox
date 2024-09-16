@@ -1,39 +1,69 @@
-# Pokémon API Water-Type Fetcher
+README for Pokémon API Fetcher
+Pokémon API Fetcher
+This Python script allows users to fetch details about Pokémon using the PokéAPI. Users can select to retrieve details for either all available Pokémon or filter them by type, such as Water or Fire types. The script performs concurrent fetching to improve performance when handling a large number of Pokémon.
 
-This Python program fetches and prints detailed information about all water-type Pokémon from the Pokémon API ([PokeAPI](https://pokeapi.co/)). It retrieves the Pokémon’s ID, name, height, weight, and base experience using a concurrent fetching method to ensure quick and efficient data retrieval.
+Features
+Fetch All Pokémon: Retrieve the complete list of all Pokémon available in the API.
+Fetch Pokémon by Type: Dynamically fetch a list of Pokémon based on type (Water, Fire, etc.).
+Concurrency: Fetches Pokémon details concurrently for faster performance.
+Error Handling: Handles errors like network issues or invalid user input gracefully.
+Installation
+Clone the repository:
+bash
 
-## Features
+git clone https://github.com/yourusername/pokemon-api-fetcher.git
+Navigate to the project directory:
+bash
 
-- Fetches a list of all **water-type Pokémon** from the PokeAPI.
-- Concurrently fetches details for each water-type Pokémon (using Python’s `concurrent.futures`).
-- Outputs key details for each Pokémon:
-  - ID
-  - Name
-  - Height
-  - Weight
-  - Base experience
+cd pokemon-api-fetcher
+Install the required Python packages:
+bash
 
-## How It Works
+pip install -r requirements.txt
+Usage
+Run the script by using the following command:
 
-1. **Fetch Water-Type Pokémon List**: 
-   The program starts by retrieving a list of all water-type Pokémon from the PokeAPI using the `/type/water` endpoint. This list provides basic information, including each Pokémon’s name and a URL to fetch more details.
+bash
 
-2. **Fetch Pokémon Details Concurrently**: 
-   After fetching the list, the program concurrently fetches detailed information for each water-type Pokémon. The concurrent approach ensures that the program retrieves all details as quickly as possible without overloading the API with requests.
+python pokemonapisandbox.py
+When you run the script, it will display a list of Pokémon types dynamically fetched from the API. You can choose a Pokémon type or select "All Pokémon" to fetch the entire list. The details of each Pokémon, including their ID, name, height, weight, and base experience, will be displayed.
 
-3. **Print Pokémon Details**:
-   For each Pokémon, the program prints the following:
-   - ID
-   - Name
-   - Height
-   - Weight
-   - Base experience
+Example:
+yaml
 
-### Example Output
+Choose a Pokémon type to fetch:
+1. Normal Pokémon
+2. Water Pokémon
+3. Fire Pokémon
 
-```bash
-Fetched 123 Water-type Pokémon.
-ID: 7, Name: squirtle, Height: 5, Weight: 90, Base Experience: 63
-ID: 8, Name: wartortle, Height: 10, Weight: 225, Base Experience: 142
-ID: 9, Name: blastoise, Height: 16, Weight: 855, Base Experience: 239
 ...
+Enter your choice: 2
+
+Fetched 151 Water-type Pokémon.
+ID: 7, Name: squirtle, Height: 5, Weight: 90, Base Experience: 63
+...
+
+Code Structure
+pokemonapisandbox.py: The main script that interacts with the PokéAPI to fetch Pokémon details based on user input.
+requirements.txt: Contains the required Python dependencies for the script (like requests).
+Dependencies
+Python 3.x
+requests: A simple HTTP library to make API requests.
+concurrent.futures: Used for concurrent fetching of data.
+Install the dependencies by running:
+
+bash
+
+pip install -r requirements.txt
+Configuration
+There are no major configurations needed for this script. If needed, you can modify the base API URLs in the script (though they are unlikely to change).
+
+Contributing
+Fork the repository.
+Create your feature branch (git checkout -b feature/your-feature).
+Commit your changes (git commit -m 'Add some feature').
+Push to the branch (git push origin feature/your-feature).
+Open a pull request.
+
+Here is an image of the program running:
+![image](https://github.com/user-attachments/assets/fb8fd8ff-11f5-4702-9752-fc80f8283598)
